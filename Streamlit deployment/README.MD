@@ -26,24 +26,18 @@ Ensure that the project structure contains the following files and folders:
                                                
 3.1. Dockerfile Configuration
 Make sure you have a Dockerfile at the root of your project with the following configuration: 
-# Use a base image for Python
+
 FROM python:3.9-slim
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file
 COPY requirements.txt .
 
-# Install required libraries
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application files (including app.py and models)
 COPY . .
 
-# Set the default command to run the Streamlit application
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
-
 
 3.2. Build Docker Image
 Build the Docker image using the command line:
