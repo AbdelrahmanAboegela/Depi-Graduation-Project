@@ -98,8 +98,6 @@
     <li><strong>Docker Deployment</strong>: The app is containerized using Docker for easy deployment across different environments, ensuring that the same version is available to the entire team.</li>
 </ul>
 
-
-
 <h2 id="sql-queries">SQL Queries</h2>
 
 <p>This section of the project contains the SQL queries and stored procedures that are used to create tables, insert data, and execute queries in the database. The following SQL files are included in this folder:</p>
