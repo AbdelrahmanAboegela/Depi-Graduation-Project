@@ -98,7 +98,7 @@
     <li><strong>Docker Deployment</strong>: The app is containerized using Docker for easy deployment across different environments, ensuring that the same version is available to the entire team.</li>
 </ul>
 
-<h3 id="5.Pipeline">5. Pipeline</h3>
+
 
 <h2 id="sql-queries">SQL Queries</h2>
 
