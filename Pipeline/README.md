@@ -1,7 +1,9 @@
 - Overview
+  
 The Depi Graduation Project is designed to create a data processing pipeline for [briefly describe the project goal, e.g., "analyzing healthcare data to support predictive modeling"]. This project streamlines data workflows to extract meaningful insights.
 
 - Features
+  
 Data Ingestion: Load data from various sources.
 Data Cleaning: Clean and preprocess data to ensure quality.
 Data Transformation: Transform data for analysis.
@@ -11,9 +13,11 @@ Result Visualization: Present findings through charts and tables.
 
 
 - Installation
+  
 Requirements
 Python 3.x
 Jupyter Notebook
+Streamlit
 Required Python packages (listed in requirements.txt)
 
 Steps to Install
@@ -32,6 +36,14 @@ jupyter notebook
 5.Open pipeline.ipynb to run the pipeline.
 
 - Usage
+  
+Running the Streamlit App
+To run the Streamlit application for stress classification, use the following command:
+streamlit run app.py
+
+Streamlit App Description
+The app allows users to classify stress levels based on 79 numeric features. Users can select their gender and input the required features. The code snippet in app.py
+
 Execute the cells in pipeline.ipynb sequentially.
 Adjust parameters as needed for your specific analysis.
 Review the generated outputs for insights.
