@@ -1,145 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-</head>
-<body>
+# Data Visualizations
 
-<h1>Stress Detection and Analysis Project</h1>
+This section focuses on the visual exploration and analysis of various physiological signals and metrics collected across different stress conditions. The goal is to understand patterns, relationships, and distributions within the data, especially regarding heart rate variability (HRV), EEG brainwave activity, and gender-based differences.
 
-<h2>Table of Contents</h2>
-<ol>
-    <li><a href="#project-overview">Project Overview</a></li>
-    <li><a href="#key-components">Key Components</a></li>
-    <ul>
-        <li><a href="#1-azure-blob-storage">Azure Blob Storage</a></li>
-        <li><a href="#2-data-mounting-in-databricks">Data Mounting in Databricks</a></li>
-        <li><a href="#3-data-preprocessing">Data Preprocessing</a></li>
-    </ul>
-    <li><a href="#how-to-run-the-blob-storage-app">How to Run the Blob Storage App</a></li>
-    <li><a href="#security-considerations">Security Considerations</a></li>
-    <li><a href="#sql-queries">SQL Queries</a></li>
-    <li><a href="#Model-Development">Model Development </a></li>
-    <li><a href="#Visualization">Visualization </a></li>
-    <li><a href="#Pipeline&Deploy">Pipeline&Deploy </a></li>
-    <li><a href="#contact-information">Contact Information</a></li>
-</ol>
+## Visualizations Included
 
-<h2 id="project-overview">Project Overview</h2>
-<p>This project focuses on <strong>Stress Detection and Analysis</strong> using EEG (Electroencephalogram) and ECG (Electrocardiogram) data. The goal is to preprocess this data and use it for developing machine learning models that can classify stress levels in individuals. We are leveraging Azure services for storage, computation, and model development.</p>
+### 1. **Gender Distribution**
+   - This plot shows the distribution of participants by gender to give an overview of the dataset's demographic makeup.
 
-<h3>Current Stage:</h3>
-<p>We have completed the data collection, storage setup, and preprocessing. The next steps involve model development and deployment.</p>
+### 2. **Distribution of Stress Conditions (Segments)**
+   - This visualization displays the distribution of data points across different stress conditions (segments), such as baseline (EO), low stress (AC1), and high stress (AC2).
 
-<h2 id="key-components">Key Components</h2>
+### 3. **Heart Rate Distribution by Gender and Stress Condition**
+   - A combined boxplot that visualizes how heart rate varies across different stress conditions, segmented by gender. This helps to identify potential gender-based differences in heart rate response under stress.
 
-<h3 id="1-azure-blob-storage">1. Azure Blob Storage</h3>
+### 4. **AVNN by Stress Condition**
+   - Boxplot showing the **Average of Normal-to-Normal intervals (AVNN)** across different stress conditions. It helps in understanding how the heart's resting state changes from baseline to high-stress conditions.
 
-<h4>Storage Setup:</h4>
-<p>Two containers have been created:</p>
-<ul>
-    <li><strong>raw-data</strong>: Contains the original EEG and ECG files.</li>
-    <li><strong>processed-data</strong>: Contains the processed data, which has been cleaned and organized for analysis.</li>
-</ul>
-<p>You can check out the code for managing Azure Blob Storage here: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/Docker_Apps/azure_blob_manager">Azure Blob Manager</a></p>
+### 5. **SDNN (ms) by Gender**
+   - A boxplot comparing the **Standard Deviation of NN intervals (SDNN)** by gender across all segments, giving insight into how heart rate variability differs between male and female participants.
 
-<h4>Security:</h4>
-<ul>
-    <li>OAuth 2.0 authentication is used to ensure secure access.</li>
-    <li>Credentials are managed via environment variables.</li>
-</ul>
+### 6. **RMSSD vs Alpha Power Across Segments**
+   - A scatter plot showing the relationship between **Root Mean Square of the Successive Differences (RMSSD)** and **Alpha Power** across different brain regions. It explores the possible connection between heart rate variability and brainwave activity.
 
-<h3 id="2-data-mounting-in-databricks">2. Data Mounting in Databricks</h3>
+### 7. **LF/HF Ratio Across Stress Conditions**
+   - This plot visualizes the **Low-Frequency (LF) to High-Frequency (HF) ratio**, which is a key metric for understanding autonomic nervous system balance across stress conditions.
 
-<h4>Mounting Process:</h4>
-<p>The <strong>raw data</strong> and <strong>processed data</strong> containers were mounted to Databricks for direct access to the data without needing manual downloads.</p>
-<p>You can find the data mounting scripts here: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/DataBricks_PreProcessing">Databricks PreProcessing</a></p>
+### 8. **LF/HF Ratio by Gender**
+   - Similar to the LF/HF Ratio plot, but this one compares values by gender to observe potential gender differences in autonomic nervous system responses.
 
-<h4>Mount Points:</h4>
-<ul>
-    <li><code>/mnt/stressdata</code>: For raw data.</li>
-    <li><code>/mnt/processedstressdata</code>: For processed data.</li>
-</ul>
+### 9. **Correlation Heatmap of HRV Measures**
+   - A heatmap that shows correlations between various **Heart Rate Variability (HRV)** measures. It helps in understanding how different HRV metrics relate to one another.
 
-<h4>Security:</h4>
-<p>The Azure credentials (client ID, tenant ID, and client secret) were securely used for mounting the Blob Storage.</p>
+### 10. **Correlation Heatmap of EEG and ECG Features**
+   - A comprehensive correlation heatmap showing the relationship between EEG (brainwave activity) and ECG (heart rate) features, revealing the connections between brain and heart responses.
 
-<h3 id="3-data-preprocessing">3. Data Preprocessing</h3>
+### 11. **Power Across Stress Conditions**
+   - Visualizes how brainwave power changes across different stress conditions for various EEG bands (Alpha, Beta, etc.).
 
-<h4>Data Types:</h4>
-<p>The project deals with two primary types of data:</p>
-<ul>
-    <li><strong>ECG Data</strong>: Heart rate variability and other metrics.</li>
-    <li><strong>EEG Data</strong>: Brainwave frequencies (Delta, Theta, Alpha, Beta, Gamma).</li>
-</ul>
-<p>You can find the preprocessing scripts here: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/DataBricks_PreProcessing">Preprocessing Code</a></p>
+### 12. **Alpha Power Distribution and Average Alpha Power Across Stress Conditions**
+   - This plot explores the distribution of **Alpha Power** (8-12 Hz) in specific brain regions (Fp1, Fp2) and shows the average alpha power across stress conditions. It provides insights into the relaxation and focus states of participants.
 
-<h4>Processing:</h4>
-<p>Both datasets were cleaned, merged, and exported back to the processed-data container. Important metrics, such as the ratio of Alpha and Beta power in EEG, were calculated.</p>
+### 13. **Beta Power by Gender**
+   - A boxplot displaying **Beta Power** across gender, allowing for the observation of any gender-related differences in cognitive load and attention.
 
-<h2 id="how-to-run-the-blob-storage-app">How to Run the Blob Storage App</h2>
+### 14. **Frequency Distribution of Fp1 and Fp2 Beta Power**
+   - This visual explores how **Beta Power** is distributed across two brain regions (Fp1 and Fp2) and across different segments, giving insights into mental engagement and stress.
 
-<p>We developed a Python application for easy access to the Azure Blob Storage containers, allowing for the upload, download, and deletion of files.</p>
-<p>You can find the application here: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/Docker_Apps/azure_blob_manager">Azure Blob Manager App</a></p>
+### 15. **Alpha vs Beta Power Across Segments**
+   - A scatter plot that compares **Alpha** and **Beta Power** across different brain regions and stress segments, providing insights into the interplay between relaxation and attention.
 
-<h4>Steps:</h4>
-<ol>
-    <li>Clone the repository containing the app.</li>
-    <li>Ensure Docker is installed on your machine.</li>
-    <li>To run the app, use the following command:
-    <pre><code>docker run -p 5000:5000 -e DISPLAY=host.docker.internal:0.0 apdoelepe/azure_blob_manager</code></pre></li>
-    <li>If the app requires Azure credentials for access, contact me via GitHub or LinkedIn to provide the <code>azure_credentials.txt</code>.</li>
-</ol>
+### 16. **Relationship between Mean HR and LF/HF Ratio by Gender**
+   - This visual explores the relationship between **Mean Heart Rate** and the **LF/HF Ratio**, segmented by gender, to study how heart rate and autonomic nervous system balance are related.
 
-<h2 id="security-considerations">Security Considerations</h2>
+---
 
-<ul>
-    <li><strong>OAuth 2.0 Authentication</strong> ensures that only authorized users can access the Azure Blob Storage.</li>
-    <li><strong>Environment Variables</strong> are used for handling sensitive information like client secrets, ensuring that they are not exposed in the codebase.</li>
-    <li><strong>Docker Deployment</strong>: The app is containerized using Docker for easy deployment across different environments, ensuring that the same version is available to the entire team.</li>
-</ul>
+## Key Insights
 
-<h2 id="sql-queries">SQL Queries</h2>
-
-<p>This section of the project contains the SQL queries and stored procedures that are used to create tables, insert data, and execute queries in the database. The following SQL files are included in this folder:</p>
-
-<h3>1. Create Tables</h3>
-<ul>
-    <li><strong>ECG Tables</strong>: SQL queries to create tables for storing ECG data.</li>
-    <li><strong>EEG Tables</strong>: SQL queries to create tables for storing EEG data.</li>
-    <li><strong>EEG Ratio Tables</strong>: SQL queries to create tables for storing the ratio of EEG Alpha to Beta power.</li>
-</ul>
-
-<h3>2. Create Schemas</h3>
-<p>SQL queries for creating schemas in the database, ensuring proper data organization.</p>
-
-<h3>3. Stored Procedure Execution</h3>
-<p>Scripts for creating and executing stored procedures that automate table creation and data insertion tasks.</p>
-
-<h3>4. Insert Data into Tables</h3>
-<p>SQL queries to insert ECG and EEG data into the respective tables after preprocessing.</p>
-
-<p>You can view and use the SQL scripts from the following folder: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/SQL%20queries">SQL Queries Folder</a></p>
-
-
-<h2 id="contact-information">Contact Information</h2>
-
-<p>For any questions or access to the credentials, you can reach out to me via:</p>
-<ul>
-    <li><strong>GitHub</strong>: <a href="https://github.com/AbdelrahmanAboegela">AbdelrahmanAboegela</a></li>
-    <li><strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/abdelrahman-alshames-635aa3277/">Abdelrahman Alshames</a></li>
-</ul>
-
-<h3>Contributions</h3>
-<p>This project was also contributed to by:</p>
-<ul>
-    <li><strong>Ahmed Ismail Fraig</strong> - <a href="https://github.com/ahmedfraig">GitHub Profile</a></li>
-    <li><strong>Tasneem Mahmoud</strong> - <a href="https://github.com/TasnemMahmoud">GitHub Profile</a></li>
-    <li><strong>Esraa Mamdouh Omar</strong> - <a href="https://github.com/EsraaMamdouh1">GitHub Profile</a></li>
-    
-</ul>
-
-</body>
-</html>
+- **Heart Rate Variability (HRV) and Stress:** Several HRV metrics (such as AVNN, SDNN, RMSSD) show distinct variations between baseline, low-stress, and high-stress conditions, revealing the impact of stress on cardiac function.
+- **Brainwave Activity and Stress:** EEG power (particularly Alpha and Beta bands) varies across stress conditions and shows gender-specific patterns, especially in frontal regions (Fp1, Fp2).
+- **Gender-Based Differences:** The visualizations reveal some notable differences in heart rate and EEG activity between male and female participants under different stress conditions.
+- **Correlations:** The heatmaps provide useful insights into how EEG and ECG features are interconnected, contributing to the broader understanding of how stress affects both the brain and heart.
