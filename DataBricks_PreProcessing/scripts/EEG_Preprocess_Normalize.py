@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
 
 # Load the Excel file
 folder_path = os.path.dirname(os.path.abspath(__file__))
