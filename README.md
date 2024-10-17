@@ -21,6 +21,8 @@
     <li><a href="#how-to-run-the-blob-storage-app">How to Run the Blob Storage App</a></li>
     <li><a href="#security-considerations">Security Considerations</a></li>
     <li><a href="#sql-queries">SQL Queries</a></li>
+    <li><a href="#Model-Development">Model Development </a></li>
+    
     <li><a href="#contact-information">Contact Information</a></li>
 </ol>
 
@@ -117,6 +119,8 @@
 
 <h3>4. Insert Data into Tables</h3>
 <p>SQL queries to insert ECG and EEG data into the respective tables after preprocessing.</p>
+
+
 
 <p>You can view and use the SQL scripts from the following folder: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/SQL%20queries">SQL Queries Folder</a></p>
 
