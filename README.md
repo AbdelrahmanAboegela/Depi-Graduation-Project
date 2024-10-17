@@ -22,6 +22,8 @@
     <li><a href="#security-considerations">Security Considerations</a></li>
     <li><a href="#sql-queries">SQL Queries</a></li>
     <li><a href="#Model-Development">Model Development </a></li>
+    <li><a href="#Visualization">Visualization </a></li>
+    <li><a href="#Pipeline&Deploy">Pipeline&Deploy </a></li>
     <li><a href="#contact-information">Contact Information</a></li>
 </ol>
 
@@ -122,40 +124,7 @@
 <p>You can view and use the SQL scripts from the following folder: <a href="https://github.com/AbdelrahmanAboegela/Depi-Graduation-Project/tree/main/SQL%20queries">SQL Queries Folder</a></p>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stress Detection using LSTM Networks</title>
-</head>
-<body>
-    <h1>Stress Detection using LSTM Networks</h1>
-    <p>This project leverages Long Short-Term Memory (LSTM) networks to detect stress levels using EEG and ECG data. The model is designed to handle sequential time-series data and classify whether the subject is under stress or not. The development is guided by principles of deep learning and signal processing, with an emphasis on model accuracy and generalization.</p>
 
-    <h2>Table of Contents</h2>
-    <ul>
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#model-architecture">Model Architecture</a></li>
-        <li><a href="#why-lstm">Why LSTM?</a></li>
-        <li><a href="#data-preprocessing">Data Preprocessing</a></li>
-        <li><a href="#training-evaluation">Training & Evaluation</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#system-requirements">System Requirements</a></li>
-        <li><a href="#usage-instructions">Usage Instructions</a></li>
-        <li><a href="#future-directions">Future Directions</a></li>
-        <li><a href="#contributors">Contributors</a></li>
-    </ul>
-
-    <h2 id="overview">Overview</h2>
-    <p>This project aims to develop a robust system that identifies stress levels by analyzing physiological signals, specifically EEG and ECG. The system employs a binary classification approach to predict stress conditions, leveraging deep learning architectures tailored for time-series data.</p>
-
-    <h2 id="model-architecture">Model Architecture</h2>
-    <p>The LSTM-based model is built with the following components:</p>
-    <ul>
-        <li><strong>LSTM Layers:</strong> Extract sequential patterns from the data, using both temporal dependencies and context.</li>
-        <li><strong>Dense Layers:</strong> Fully connected layers that process the extracted features into condensed representations for final predictions.</li>
-        <li><strong>Dropout Layer
 
 
 <h2 id="contact-information">Contact Information</h2>
