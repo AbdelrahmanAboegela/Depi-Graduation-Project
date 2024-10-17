@@ -1,4 +1,5 @@
-Prerequisites
+1.Prerequisites
+
 Before starting the deployment process, ensure you have the following items:
 
 .Docker installed on your machine or server. Docker Installation Guide
